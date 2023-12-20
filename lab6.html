@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <title>Car rent</title> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <style>
+        /* Custom styles go here */
+        .bg-1 {
+            background-color: #fefefe;
+            color: #202020;
+            }
+
+            .header {
+            background-image: url(car_rent.jpg); /* Replace 'your-image.jpg' with your image file path */
+            background-size: cover;
+            background-position: center;
+            color: #343030;
+            text-align: center;
+            padding: 100px 0;
+            max-width: 100%; /* Adjust the maximum width as per your design */
+            margin: 0 auto; /* Center the header horizontally */
+            }
+            .site-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(246, 14, 14);  
+            font-family:Times New Roman, serif;
+            text-align: left;
+            }
+
+            .signup-form {
+            background-color: rgb(223, 104, 104);
+            margin-bottom: 20px; /* Додайте бажаний відступ знизу форми */
+            width: 360px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(222, 205, 205, 0.1);
+            margin: 0 auto;
+            }
+
+            .form-group {
+            padding: 7px ; /* Додайте бажаний розмір відступу */
+            margin-left: 30px;
+            margin-right: 30px;
+            }
+
+            .btn {
+            width: 150px; /* Задайте бажаний розмір ширини для кнопки */
+           /* margin: -10px 100px; /* Додайте відступ вгорі і внизу кнопки */
+            background-color: rgb(14, 14, 14);
+            border: none; /* Видаліть рамку кнопки (опціонально) */
+            color: rgb(239, 235, 235); /* Колір тексту на кнопці */
+            transition: background-color 0.3s; /* Додайте плавну анімацію для зміни фонового кольору */
+            }
+            .btn:hover {
+            background-color: rgb(150, 136, 136); /* Змініть колір фону при наведенні */
+            }   
+            .bold-text {
+            font-weight: bold; /* Шрифт стає жирним */
+            }
+
+            .pagination {
+            display: inline-block;
+            }
+            .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #adacac;
+            margin: 0 4px;
+            }
+            .pagination a.active {
+            background-color: #b35353;
+            color: white;
+            }
+            .pagination a:hover:not(.active) 
+            {
+                background-color: #ddd;
+            }
+            .center {
+            text-align: center;
+            }
+       
+        </style>
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="logo">
+                      <img src="logo.png" alt="Company Logo" width="150" height="auto" >
+
+                    </div>
+                  </div>
+                <div class="col-sm-3" style="background-color: rgb(248, 251, 251); text-align: center;"> 
+                    <h1 class="site-title">Auto 
+                        <span style="color: gray;">Insurance</span> </h1>
+                    
+                </div>
+                <div class="col-sm-5" style="background-color: rgb(248, 251, 251); text-align: center;">
+                    <span style="color: red; font-family:Times New Roman, serif; font-size: 18px;">Дзвоніть нам согодні</span>
+                    <span style="color: gray;  font-family:Times New Roman, serif; font-size: 18px;">+(800)567-1234</span> 
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Навігація</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Table">Авто</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Offer">Пропозиції</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Collapse">Ідеї</a>
+                    </li>    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Employee">Працівники</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Insurance">Страхування</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Reviews">Відгуки</a>
+                    </li>   
+                </ul>
+              </div>
+            </div>  
+        </nav>
+
+        <!-- <div class="container">
+          <h5>Динамічні таблетки</h5>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Таблиця</a></li>
+            <li class="nav-item">
+              <a class="nav-link href="#">Страхування</a></li>
+            <li class="nav-item">
+              <a class="nav-link href="#">Відгуки</a></li>
+          </ul>
+        </div> -->
+        
+
+  <!-- Header with Background Image and Signup Form -->
+  <header class="header">
+    <div class="container">
+       <div class="row justify-content-end"> 
+        <div class="col-md-6">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+                </div>
+                
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="rent1.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="rent2.jpg" alt="Chicago" class="d-block" style="width:100%">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="rent3.jpg" alt="New York" class="d-block" style="width:100%">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="rent4.jpg" alt="New York" class="d-block" style="width:100%">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="rent5.jpg" alt="New York" class="d-block" style="width:100%">
+                  </div>
+                </div>
+                
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+              </div>
+        </div>
+        <div class="col-md-6">
+          <div class="signup-form">
+            <h3 class="mb-4">FREE QUOTE</h3>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="First Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Last Name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" style="margin: -10px 100px;">GET QUOTE</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </header>
+    <div class="container">
+        <div class="row">   
+            <div class="col-sm" style="background-color: rgb(223, 104, 104);color: rgb(255, 255, 255); margin: -20px 10px 10px ; text-align: center;">
+               <br><img src="ok.png" width="150px" height="150px" alt="like">
+               <br><h5> Вільний & легкий в використанні.</h5><p> Зручно використовувати і легко навчатися.</p>
+             </div>
+            <div class="col-sm" style="background-color: rgb(223, 104, 104);color: rgb(255, 255, 255); margin: -20px 10px 10px; text-align: center;">
+                <br> <img src="oclock.png" width="150px" height="150px" alt="oclock">
+                <br><h5> Збережи час & гроші.</h5><p> У нас є багато дешевих і приємних акцій.</p>
+            </div>
+            <div class="col-sm" style="background-color: rgb(223, 104, 104);color: rgb(255, 255, 255); margin: -20px 10px 10px; text-align: center;">
+                <br><img src="calendar.png" width="150px" height="150px" alt="calendar">
+                <br><h5> Ніяких обмежень у посиланнях.</h5><p> У нас є багато цікавої інформації.</p>
+            </div>
+        </div>
+
+        <a id="Table"></a>
+        <table class="table table-striped table-hover table-bordered table-sm ">
+            <thead>
+              <tr>
+                <th>Марка</th>
+                <th>Клас</th>
+                <th>К-ть пасажирів</th>
+                <th>Ціна</th>
+                <th>Коробка передач</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-info">
+                <td>Mazda 6</td>
+                <td >Проміжний</td>
+                <td>5</td>
+                <td>4000 USD</td>
+                <td>Автомат</td>
+              </tr>
+              <tr>
+                <td class="table-success">Ford Fiesta</td>
+                <td >Компакт</td>
+                <td>5</td>
+                <td>5000 USD</td>
+                <td>Механіка</td>
+              </tr>
+              <tr>
+                <td class="table-success">Suzuki Alto</td>
+                <td>Компакт</td>
+                <td>5</td>
+                <td>7000 USD</td>
+                <td>Механіка</td>
+              </tr>
+              <tr class="table-danger">
+                <td>Kia Seltos</td>
+                <td>Проміжний</td>
+                <td>5</td>
+                <td>8000 USD</td>
+                <td>Автомат</td>
+              </tr>
+              <tr>
+                <td>Hundai Grand i10</td>
+                <td>Проміжний</td>
+                <td>5</td>
+                <td>1000 USD</td>
+                <td>Автомат</td>
+              </tr>
+              <tr class="table-info">
+                <td>Suzuki Brezza</td>
+                <td >Компакт</td>
+                <td>5</td>
+                <td>9000 USD</td>
+                <td>Автомат</td>
+              </tr>
+              <tr>
+                <td>Jeep</td>
+                <td>Проміжний</td>
+                <td>5</td>
+                <td>15000 USD</td>
+                <td>Автомат</td>
+              </tr>
+              <tr  class="table-danger">
+                <td>Kia Picanto</td>
+                <td>Проміжний</td>
+                <td>5</td>
+                <td>12000 USD</td>
+                <td>Автомат</td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+
+    <a id="Offer"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 " style=" text-align: center;">
+                <img src="car.jpg" alt="Image" class="img-fluid" >
+            </div>
+            <div class="col-sm-4" style="text-align: center;">
+                <!-- Друга колонка з текстом і кнопкою -->
+                <h5>Плати менше & отримуй більше</h5>
+                <p>Оренда — не єдиний спосіб використання особистого автомобіля працівника для потреб підприємства.
+                     Зокрема, деякі підприємства користуються приватними автомобілями на умовах виплати його
+                      власникам відповідної компенсації на підставі трудового законодавства.</p>
+                <button class="btn btn-info ">GET QUOTE</button><br>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <a id="Collapse"></a>
+    <div class="container mt-3">
+        <div id="accordion">
+            <div class="card">
+              <div class="card-header">
+                <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+                  Пропозиції
+                </a>
+              </div>
+              <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                <div class="card-body">
+                 Привабливі ціни, вигідні умови, ствндартні тарифи, шалені поїздки, захоплюючі знаймства, класні люди
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                  <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                  Ідеї
+                </a>
+                </div>
+                <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                  <div class="card-body">
+                    Привабливі ціни, вигідні умови, ствндартні тарифи, шалені поїздки, захоплюючі знаймства, класні люди
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+                    Зауваження
+                  </a>
+                </div>
+                <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                  <div class="card-body">
+                    Привабливі ціни, вигідні умови, ствндартні тарифи, шалені поїздки, захоплюючі знаймства, класні люди
+                  </div>
+                </div>
+              </div>
+
+        </div>
+    </div>
+
+    <a id="Employee"></a>
+    <div class="container-fluid bg-1 text-center">
+        <div class="row">   
+            <div class="col" >
+                <img src="man1.jpg" class="rounded-circle" alt="Cinque Terre" width="204" height="216">
+               <h6> Я маю багато навичок у роботі і клієнтсьої бази.</h6>
+               <span style="color: red; font-family:Times New Roman, serif; font-size: 17px;">Богдан</span>
+             </div>
+            <div class="col" >
+                <img src="man2.jpg" class="rounded-circle" alt="Cinque Terre" width="274" height="225">
+               <h6> Я маю високий ретинг довіри серед покупців.</h6>
+               <span style="color: red; font-family:Times New Roman, serif; font-size: 17px;">Марія</span>
+            </div>
+            <div class="col" >
+                <img src="man3.jpg" class="rounded-circle" alt="Cinque Terre" width="204" height="206">
+               <h6> Я маю досить хороші навички у спілкуванні з людьми.</h6>
+               <span style="color: red; font-family:Times New Roman, serif; font-size: 17px;">Ірина</span>
+            </div>
+        </div>
+    </div>
+
+    <a id="Insurance"></a>
+    <div class="container-fluid ">
+        <div class="row">
+                <div class="col-sm-8"  style=" text-align: center;">
+                    <h5>Якісне страхування</h5>
+                    <p>На сьогодні туристичне страхування має найбільший попит. Якість медичних послуг за кордоном висока,
+                         як і ціни на них. Оформивши страховку, ви отримуєте цілодобову інформаційну підтримку 
+                         компанії-асистансу, безкоштовне лікування, а в разі потреби і безкоштовний переліт додому.</p>
+                    <button class="btn btn-info ">GET QUOTE</button><br>
+                </div>
+                
+                <div class="col-sm-4">
+                    <img src="woman_rent.jpg" alt="Image" class="img-fluid" width="404" height="216" >
+                </div>
+              </div>
+        
+    </div>
+<br>
+<a id="Reviews"></a>
+<div class="container-fluid bg-1 text-center">
+    <h6 class="text-center"></h6><span style=" font-family:Times New Roman, serif; font-size: 25px;">Відгуки</span><br>
+    <div class="row">   
+        <div class="col">
+            <img src="famost1.jpg"  class="img-thumbnail" alt="Cinque Terre" width="204" height="160" >
+            <P class="text-center">Дуже хороша компанія,менеджер просто супер,рекомендую всім хто хоче орендувати машини.
+                Машини в ідеальному стані,залишились дуже задоволені.</p>
+        </div>
+        <div class="col">
+            <img src="famost2.jpg"  class="rounded" alt="Cinque Terre" width="204" height="160" >
+            <p class="text-center">Скористався послугою автопрокату в м.Львів
+                Дуже задоволений роботою Дмитра
+                Процес оформлення швидкий,розрахунок можна проводити в довільній формі
+                Оцінюю на 5 із 5 і рекомендую</p>
+        </div>
+        <div class="col">
+            <img src="famost3.jpg" class="rounded" alt="Cinque Terre" width="204" height="160">
+            <p class="text-center">Менеджер Юрій у Львові – це щось фантастичне: ввічливий, ерудований, чітко пояснює умови оренди, 
+                ретельно оформляє документи, дає поради так, аби добре було в першу чергу клієнту, а вже потім компанії. 
+                Рідко можна натрапити на такий рівень сервісу.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10295.263409779382!2d24.003072162526234!3d49.82712615005627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ae787164c8c7f%3A0x894bf62f0db0fc23!2z0JzQtdC00LjQug!5e0!3m2!1suk!2sua!4v1698998426024!5m2!1suk!2sua"
+     width="100%" height="450" style="border:0;" allowfullscreen="" 
+     loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </div>
+    </div>
+</div>
+
+<div class="center">
+    <ul class="pagination">
+        <a href="#" >Previous</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">Next</a>
+      </ul>
+  </div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-custom text-muted">
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
+</footer>
+
+    </body>
+</html>
